@@ -50,4 +50,4 @@ Login and password
 vpnbook
 dmw3rcv
 ```
-## Congrach! U hack the banning by locations and nations:)
+## Congratulations! U hack the banning by locations and nations:)
