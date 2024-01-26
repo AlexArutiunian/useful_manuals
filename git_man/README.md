@@ -4,7 +4,8 @@
 ```
 cd ~/.ssh
 ssh-keygen -t ed25519 -C "arutunanalexandr17@gmail.com"
-
+```
+```
 cat id_ed25519.pub
 
 ssh-add ~/.ssh/git_ssh
@@ -21,7 +22,12 @@ git config --global user.email "arutunanalexandr17@gmail.com"
 ## Check the results
 ```
 ssh -T git@github.com
+```
+```
 ssh-add ~/.ssh/id_ed25519
+```
+```
+ssh -T git@github.com
 ```
 ## P.S. if there is the problem as RermissionDenied when trying to git commans after reload new linux-session, do:
 ```
