@@ -12,10 +12,10 @@ Currently addresses are:
 Pliz be careful. It can change
 
 ## Edit file /etc/resolv.conf by root rights
-
+```
 sudo su
 vim /etc/resolv.conf
-
+```
 In resolv.conf:
 Before:
 ```
@@ -35,17 +35,19 @@ nameserver 208.67.220.220
 ## Next install vpn-soft from  [vpnbook.com](https://www.vpnbook.com/)
 
 ### For example from Russia I recommend open the site trough online [proxy](https://www.croxyproxy.com/) (if it bans your ip)
-
+```
 upload server file, for example:
 Server: Download US1 Server OpenVPN Config Bundle
 
 unzip this
-
+```
 ## Finally start vpn by command below with input login and password from vpnbook.com 
-
+```
 openvpn --config vpnbook-us1-tcp443.ovpn
-
+```
+Login and password
+```
 vpnbook
 dmw3rcv
-
+```
 ## Congrach! U hack the banning by locations and nations:)
