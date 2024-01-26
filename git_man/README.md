@@ -1,5 +1,7 @@
 # Basic settings
 
+## [Great video](https://youtu.be/R09UNc4ZNi4?si=ZwznyfC_MHfpK_FF)
+
 ## ssh generation
 ```
 cd ~/.ssh
