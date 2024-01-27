@@ -32,7 +32,7 @@ ssh-add ~/.ssh/id_ed25519
 ```
 ssh -T git@github.com
 ```
-## P.S. if there is the problem as RermissionDenied when trying to git commans after reload new linux-session, do:
+## P.S. if there is the problem as RermissionDenied when trying to git commands after reload new linux-session, do:
 ```
 ssh-add ~/.ssh/id_ed25519
 ```
