@@ -10,8 +10,9 @@ ssh-keygen -t ed25519 -C "arutunanalexandr17@gmail.com"
 ```
 cat id_ed25519.pub
 
-ssh-add ~/.ssh/git_ssh
+ssh-add ~/.ssh/id_ed25519
  ```
+P.S. insted of id_ed25519 (default name) u can setup ur own name for these files (pub and with no .x)
 ## add key on github website
 
 by [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
