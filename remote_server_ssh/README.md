@@ -2,7 +2,7 @@
 
 Good [video](https://youtu.be/JdpcvDCxGfQ?si=5X-3RHpQaM9bOXsT)
 
-# REMOTE Server setup by SSH in linux (kali or others)
+# REMOTE Server settings by SSH in linux (kali or others)
 
 ## Check ip on device
 
