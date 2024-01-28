@@ -59,3 +59,13 @@ with general view:
 ```
 scp -r /path_from server_name@192.168.0.180:/path_where
 ```
+
+## How to copy files from server
+
+```
+scp -r zelen@192.168.0.180:/home/zelen/80sec /home/arutiunian
+```
+
+The main rool is : copy or load exactly FROM/ON SERVER
+
+The key-word is SERVER (not PC)
