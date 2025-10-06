@@ -9,7 +9,7 @@ ssh-keygen -t ed25519 -C "arutunanalexandr17@gmail.com"
 ```
 ```
 cat id_ed25519.pub
-
+eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
  ```
 P.S. insted of id_ed25519 (default name) u can setup ur own name for these files (pub and with no .x)
