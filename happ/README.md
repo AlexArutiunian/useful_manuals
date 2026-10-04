@@ -46,17 +46,40 @@ find ~/.config ~/.local/share ~/.cache \
   -maxdepth 2 -iname '*happ*' 2>/dev/null
 ```
 
-## 2. Если проблема появилась после случайного импорта JSON
+## 2. Если `happd.service` есть и он active/running
+
+Если GUI Happ уже закрыт, перезапустить сервис и сразу собрать диагностику:
+
+```bash
+sudo systemctl restart happd
+sleep 2
+
+systemctl status happd --no-pager -l
+
+echo "===== HAPPD LOG ====="
+journalctl -u happd -b --no-pager -n 100
+
+echo "===== SERVICE FILE ====="
+systemctl cat happd
+
+echo "===== SOCKETS ====="
+sudo ss -lxnp | grep -Ei 'happ|xray' || true
+sudo ss -lntup | grep -Ei 'happ|xray' || true
+```
+
+После этого открыть Happ заново. Если ошибка остаётся, сохранить вывод блока выше — особенно `journalctl` и `systemctl cat happd`.
+
+## 3. Если проблема появилась после случайного импорта JSON
 
 Если вместо VPN-конфига в Happ был открыт обычный JSON-файл, сначала:
 
 1. Полностью закрыть Happ, включая процесс/иконку в трее.
-2. Запустить Happ заново.
-3. Если приложение открывается — удалить ошибочно импортированную запись и импортировать корректный VPN-конфиг.
-4. Если Happ сообщает, что Client Service недоступен — выполнить команды выше и определить точное имя системного или пользовательского сервиса.
+2. Если `happd.service` активен — выполнить блок перезапуска и диагностики выше.
+3. Запустить Happ заново.
+4. Если приложение открывается — удалить ошибочно импортированную запись и импортировать корректный VPN-конфиг.
 5. Не удалять все каталоги Happ вслепую до проверки их содержимого.
 
-## 3. Что прислать для разбора
+## 4. Что прислать для разбора
 
 Сохраните вывод этих команд:
 
@@ -67,4 +90,14 @@ systemctl --user list-units --type=service --all | grep -i happ
 find ~/.config ~/.local/share ~/.cache -maxdepth 2 -iname '*happ*' 2>/dev/null
 ```
 
-По ним уже можно понять точное имя сервиса и конкретный каталог/файл, который мешает запуску, не затрагивая остальные VPN-настройки.
+Если `happd.service` уже найден:
+
+```bash
+systemctl status happd --no-pager -l
+journalctl -u happd -b --no-pager -n 100
+systemctl cat happd
+sudo ss -lxnp | grep -Ei 'happ|xray' || true
+sudo ss -lntup | grep -Ei 'happ|xray' || true
+```
+
+По этому выводу можно понять, что мешает GUI связаться с `happd`, не затрагивая остальные VPN-настройки.
